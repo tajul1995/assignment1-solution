@@ -66,7 +66,7 @@ const books :Books[] = [
 ];
 
 const filterByRating=<T extends Books>(value:T[]):T[]|undefined=>{
-    const filteredValue=value.filter(book=>book.rating>4)
+    const filteredValue=value.filter(book=>book.rating>=4)
     return filteredValue
     
     }
@@ -179,7 +179,7 @@ const calculateTotalPrice=<T extends Products>(products:T[])=>{
         
       return  products.reduce((totalPrice,product)=>{
             const {price,quantity,discount} = product
-            // console.log((discount?/100 )as number);
+           
             
             if(discount){
                 totalPrice+=price*quantity-price*quantity*(discount*0.01)
