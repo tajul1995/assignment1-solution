@@ -5,7 +5,7 @@ type User={
 name:string;
 role:'user'
 }
-type Admin=
+type Admin={
 role:"admin";
 hasCar:boolean
 }
