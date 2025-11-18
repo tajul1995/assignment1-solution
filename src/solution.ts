@@ -66,11 +66,12 @@ const books :Books[] = [
   { title: 'Book C', rating: 5.0 },
 ];
 
-const filterByRating=<T extends Books>(value:T[]):T[]|undefined=>{
+const filterByRating=<T extends Books>(value:T[]):T[]=>{
     const filteredValue=value.filter(book=>book.rating>=4)
     return filteredValue
     
     }
+
 
  
 
