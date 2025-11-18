@@ -18,6 +18,7 @@ const formatValue=<T>(value:T):string|number|boolean|{message:string}=>{
 }
 
 
+
 const getLength=<T>(value:T):number|{message:string}=>{
         if(typeof value === 'string'){
             return value.length
@@ -29,6 +30,7 @@ const getLength=<T>(value:T):number|{message:string}=>{
         return {message:'wrong input '}
     }
 }
+
 
 
 
@@ -106,7 +108,7 @@ const myBook: Book = {
   title: 'The Great Gatsby',
   author: 'F. Scott Fitzgerald',
    publishedYear: 1925,
-  isAvailable: false,
+  isAvailable: true,
 };
 const  printBookDetails=<T extends Book>(obj:T  )=>{
     
@@ -128,10 +130,10 @@ printBookDetails(myBook)
 
 
  
-const array1 = [1, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7];
+const array1 = [1, 2, 3, 4, 5,9,2,3];
+const array2 = [3, 4, 5, 6, 7,8,4,2];
 
-const getUniqueValues =<X,Y>(arr1:X[],arr2:Y[])=>{
+const getUniqueValues =(arr1:(string|number)[],arr2:(string|number)[]):(string|number)[]=>{
     let array=[...arr1,...arr2]
     let emptyArray:any[]=[]
         for (let i = 0; i < array.length; i++) {
@@ -152,8 +154,8 @@ const getUniqueValues =<X,Y>(arr1:X[],arr2:Y[])=>{
 
 }
 
-const arr=getUniqueValues(array1, array2);
- 
+const arr=getUniqueValues(array1, array2)
+
 
 
 
@@ -167,8 +169,8 @@ type Products={
  discount?:number
 }
 const products = [
-   { name: 'Pen', price: 10, quantity: 2 },
-    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+//    { name: 'Pen', price: 10, quantity: 2 },
+     { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
   { name: 'Bag', price: 50, quantity: 1, discount: 20 },
 ];
 
@@ -192,3 +194,5 @@ const calculateTotalPrice=<T extends Products>(products:T[])=>{
 
 const price=calculateTotalPrice(products)
   
+
+
