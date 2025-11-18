@@ -1,6 +1,6 @@
 
  
-const formatValue=<T>(value:T):string|number|boolean|{message:string}=>{
+const formatValue=(value:string|number|boolean):string|number|boolean|{message:string}=>{
     if(typeof value==='string'){
         return value.toUpperCase()
 
@@ -16,6 +16,7 @@ const formatValue=<T>(value:T):string|number|boolean|{message:string}=>{
     }
 
 }
+
 
 
 
@@ -73,7 +74,7 @@ const filterByRating=<T extends Books>(value:T[]):T[]|undefined=>{
     
     }
 
-    
+ 
 
 type User={
     id:number,
@@ -87,10 +88,13 @@ const users:User[] = [
   { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
 
-const  filterActiveUsers=<T extends User>(value:T[])=>{
+const  filterActiveUsers=<T extends User>(value:T[]):T[]=>{
     const findActiveUser= value.filter(user=>user.isActive === true)
     return findActiveUser
 }
+
+
+
 
 
 
@@ -110,7 +114,7 @@ const myBook: Book = {
    publishedYear: 1925,
   isAvailable: true,
 };
-const  printBookDetails=<T extends Book>(obj:T  )=>{
+const  printBookDetails=<T extends Book>(obj:T  ):void=>{
     
     
 console.log(`Title: ${obj['title']}, Author:${obj['author']}, Published: ${obj['publishedYear']}, Available:${obj['isAvailable']?'Yes':'No'}`);
@@ -162,6 +166,7 @@ const arr=getUniqueValues(array1, array2)
 
 
 
+
 type Products={
  name:string
  price:number
@@ -169,12 +174,12 @@ type Products={
  discount?:number
 }
 const products = [
-//    { name: 'Pen', price: 10, quantity: 2 },
-     { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
-  { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+    { name: 'Pen', price: 10, quantity: 2 },
+      { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+   { name: 'Bag', price: 50, quantity: 1, discount: 20 },
 ];
 
-const calculateTotalPrice=<T extends Products>(products:T[])=>{
+const calculateTotalPrice=<T extends Products>(products:T[]):number=>{
     if(products.length===0){
         return 0
     }
@@ -192,7 +197,11 @@ const calculateTotalPrice=<T extends Products>(products:T[])=>{
         },0)
 }
 
+
+
+
 const price=calculateTotalPrice(products)
   
+
 
 
