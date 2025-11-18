@@ -116,8 +116,9 @@ const myBook: Book = {
 };
 const  printBookDetails=<T extends Book>(obj:T  ):void=>{
     
-    
-console.log(`Title: ${obj['title']}, Author:${obj['author']}, Published: ${obj['publishedYear']}, Available:${obj['isAvailable']?'Yes':'No'}`);
+
+  
+console.log(`Title: ${obj['title']}, Author: ${obj['author']}, Published: ${obj['publishedYear']}, Available: ${obj['isAvailable']?'Yes':'No'}`);
 }
 printBookDetails(myBook)
 
