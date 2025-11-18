@@ -176,6 +176,7 @@ const products = [
     { name: 'Pen', price: 10, quantity: 2 },
       { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+   { name: 'Bag2', price: 60, quantity: 5, discount: 0 },
 ];
 
 const calculateTotalPrice=<T extends Products>(products:T[]):number=>{
@@ -189,7 +190,7 @@ const calculateTotalPrice=<T extends Products>(products:T[]):number=>{
             
             if(discount){
                 totalPrice+=price*quantity-price*quantity*(discount*0.01)
-            }else{
+            }else if(!discount || discount==0){
                 totalPrice+=price*quantity
             }
             return totalPrice
@@ -200,6 +201,9 @@ const calculateTotalPrice=<T extends Products>(products:T[]):number=>{
 
 
 const price=calculateTotalPrice(products)
+
+
+
   
 
 
