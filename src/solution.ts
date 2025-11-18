@@ -49,9 +49,11 @@ class Person {
     
     }
     getDetails(){
-        return `Name: ${this['name']}, Age: ${this['age']}`
+        const res= `Name: ${this['name']}, Age: ${this['age']}`
+        return `'${res}'`
     }
 }
+
 
 
 
@@ -174,9 +176,9 @@ type Products={
  discount?:number
 }
 const products = [
-    { name: 'Pen', price: 10, quantity: 2 },
+    { name: 'Pen', price: 10, quantity: 2 ,discount: 0 },
       { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
-   { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
    { name: 'Bag2', price: 60, quantity: 5, discount: 0 },
 ];
 
@@ -202,6 +204,7 @@ const calculateTotalPrice=<T extends Products>(products:T[]):number=>{
 
 
 const price=calculateTotalPrice(products)
+
 
 
 
