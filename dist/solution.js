@@ -33,7 +33,7 @@ class Person {
         this.age = age;
     }
     getDetails() {
-        return `Name:${this['name']}, age:${this['age']}`;
+        return `Name: ${this['name']}, Age: ${this['age']}`;
     }
 }
 const books = [
@@ -42,7 +42,7 @@ const books = [
     { title: 'Book C', rating: 5.0 },
 ];
 const filterByRating = (value) => {
-    const filteredValue = value.filter(book => book.rating > 4);
+    const filteredValue = value.filter(book => book.rating >= 4);
     return filteredValue;
 };
 const users = [
@@ -58,14 +58,14 @@ const myBook = {
     title: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
     publishedYear: 1925,
-    isAvailable: false,
+    isAvailable: true,
 };
 const printBookDetails = (obj) => {
-    console.log(`Title: ${obj['title']}, Author:${obj['author']}, Published: ${obj['publishedYear']}, Available:${obj['isAvailable'] ? 'Yes' : 'No'}`);
+    console.log(`Title: ${obj['title']}, Author: ${obj['author']}, Published: ${obj['publishedYear']}, Available: ${obj['isAvailable'] ? 'Yes' : 'No'}`);
 };
 printBookDetails(myBook);
-const array1 = [1, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7];
+const array1 = [1, 2, 3, 4, 5, 9, 2, 3];
+const array2 = [3, 4, 5, 6, 7, 8, 4, 2];
 const getUniqueValues = (arr1, arr2) => {
     let array = [...arr1, ...arr2];
     let emptyArray = [];
@@ -95,7 +95,6 @@ const calculateTotalPrice = (products) => {
     }
     return products.reduce((totalPrice, product) => {
         const { price, quantity, discount } = product;
-        // console.log((discount?/100 )as number);
         if (discount) {
             totalPrice += price * quantity - price * quantity * (discount * 0.01);
         }
